@@ -10,7 +10,7 @@ module.exports = {
         'white':'hsl(0, 0%, 100%)',
         'darkBlueText':'hsl(200, 15%, 8%)',
         'darkBlueBg':' hsl(207, 26%, 17%)',
-        'darkBlueEl':' hsl(209, 23%, 22%)'
+        'darkBlueEl':' hsl(209, 23%, 22%) '
       },
     },
   },

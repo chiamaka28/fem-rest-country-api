@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,15 +7,16 @@
     <link href="/dist/output.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body class="bg-lightGray">
+  <body class="bg-lightGray dark:bg-slate-800 dark:text-white">
     <div
-      class="header h-28 flex justify-between items-center px-6 shadow-lg "
+      class="header h-28 flex justify-between items-center px-6 shadow-lg  "
     >
       <div>
         <h1>Where in the world?</h1>
       </div>
       <div class="flex">
-        <div class="w-[15px]"><img src="/images/moon-solid.svg" alt="" /></div>
+        <div class="light w-[15px] cursor-pointer" ><img class="rotate-[-20px]" src="/images/moon-regular.svg" alt="" /></div>
+        <!-- <div class="dark w-[15px] rotate-2 "><img class="rotate-[-20px]" src="/images/moon-solid.svg" alt="" /></div> -->
         <h2>Dark Mode</h2>
       </div>
     </div>
@@ -34,7 +35,7 @@
       class="countries flex flex-col items-center md:flex-row md:w-[90%] md:flex-wrap md:m-auto md:mx-44 text-[14px]"
     >
       <div
-        class="flex flex-col w-[250px] my-10 rounded-lg overflow-hidden  shadow-lg"
+        class="flex flex-col w-[250px] my-10 rounded-lg overflow-hidden  shadow-lg dark:bg-darkBlueEl"
       >
         <img class="object-cover h-52 w-full" src="${png}" />
         <div class="px-[15px] mb-20 text-darkBlueText">
