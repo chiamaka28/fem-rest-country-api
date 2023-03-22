@@ -78,10 +78,10 @@ function displayCountries() {
           capital,
           flags: { svg },
         }) => {
-          let card = `<div class=" flex flex-col w-[250px] my-10 rounded-lg overflow-hidden  shadow-lg dark:bg-darkBlueEl">
+          let card = `<div class=" flex flex-col w-[250px] my-10 rounded-lg overflow-hidden  shadow-lg dark:bg-darkBlueEl text-white">
    <img class ="object-cover h-52 w-full" src = "${svg}"/>
-    <div class="px-[15px] mb-20 text-darkBlueText ">
-      <h2 class="text-xl font-bold my-[30px]">${common}</h2>
+    <div class="px-[15px] mb-20 text-darkBlueText dark:text-white">
+      <h2 class="text-xl font-bold my-[30px]  text-white">${common}</h2>
       <p><span class="font-medium">Population:</span> ${population}</p>
       <p><span class="font-medium">Region:</span> ${region}</p>
       <p><span class="font-medium">Capital:</span> ${capital}</p>
