@@ -15,19 +15,21 @@
         <h1>Where in the world?</h1>
       </div>
       <div class="flex">
-        <div class="light w-[15px] cursor-pointer" ><img class="rotate-[-20px]" src="/images/moon-regular.svg" alt="" /></div>
-        <!-- <div class="dark w-[15px] rotate-2 "><img class="rotate-[-20px]" src="/images/moon-solid.svg" alt="" /></div> -->
+        <div class="light w-[15px] cursor-pointer" id="light" ><img class="rotate-[-20px]" src="/images/moon-regular.svg" alt="" /></div>
         <h2>Dark Mode</h2>
       </div>
     </div>
-    <div class="search flex flex-col items-center">
-      <input
-        type="text"
-        id="search"
-        class="w-[350px] h-[40px] px-20 my-7  shadow-lg dark:bg-darkBlueEl dark:text-white"
-        placeholder="Search for a country..."
-      />
-    </div>
+    <form class="flex justify-center">
+      <div class="relative flex  items-center text-gray-400  mx-auto">
+        <img src="/images/magnifying-glass-solid.svg" class="h-[15px] w-[15px] cursor-pointer absolute left-6" id="search-btn" alt="">
+        <input
+          type="text"
+          id="search"
+          class="w-[350px] h-[40px] px-20 my-7 placeholder-slate-500 shadow-lg dark:bg-darkBlueEl dark:text-white"
+          placeholder="Search for a country..."
+        />
+      </div>
+    </form>
     <div class="flex w-[170px] py-4 px-6 mx-5  items-center justify-between  shadow-lg"><p>Filter by Region</p>
     <div class="w-[10px]"><img src="/images/chevron-down-solid.svg" alt=""></div>
   </div>

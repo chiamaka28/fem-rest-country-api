@@ -1,66 +1,36 @@
 const countries = document.querySelector(".countries");
-const light = document.querySelector(".light");
-const dark = document.querySelector(".dark");
+const light = document.getElementById("light");
+const input = document.getElementById("search");
+const searchBtn = document.getElementById("search-btn");
+const cities = [];
 
-function checkTheme () {
-  if (localStorage.theme === 'dark' ) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
+function checkTheme() {
+  if (localStorage.theme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
 }
-};
 
-
-function toggleTheme () {
+function toggleTheme() {
   if (localStorage.theme === "dark") {
     localStorage.theme = "light";
-  }else{
+  } else {
     localStorage.theme = "dark";
   }
 
-  checkTheme ();
+  if (light.getAttribute("src") == "images/moon-regular.svg") {
+    console.log("yep");
+    light.src = "images/icon-solid.svg";
+  } else {
+    light.src = "/images/moon-regular.svg";
+  }
+  checkTheme();
 }
 
 light.addEventListener("click", () => {
-  console.log("yess");
-  toggleTheme()
-})
-// const iconToggle = () =>{
-//   light.classList.toggle("display-none");
-//   dark.classList.toggle("display-none");
-// }
-
-// const themeCheck = () => {
-//   if (userTheme === "dark" || (!userTheme && systemTheme)) {
-//     document.documentElement.classList.add("dark");
-//     light.classList.add("display-none");
-//     return;
-//   }
-//     dark.classList.add("display-none");
-// };
-
-// const themeSwitch = () => {
-//   if (document.documentElement.classList.contains("dark")) {
-//     document.documentElement.classList.remove("dark");
-//     localStorage.setItem("theme", "light");
-//     iconToggle();
-//     return;
-//   }
-//   document.documentElement.classList.add("dark");
-//   localStorage.setItem("theme", "dark");
-//   iconToggle();
-// }
-
-// light.addEventListener("click", () => {
-//   themeSwitch()
-// })
-
-// dark.addEventListener("click", () => {
-//   themeSwitch()
-// })
-
-// themeCheck();
-
+  toggleTheme();
+});
 
 function displayCountries() {
   const promise = fetch("https://restcountries.com/v3.1/all");
@@ -69,7 +39,8 @@ function displayCountries() {
     const jsonPromise = response.json();
     console.log(response);
     jsonPromise.then((data) => {
-      let country = data.map(
+      cities.push(...data);
+      let country = cities.map(
         ({
           name: { common },
           languages,
@@ -94,6 +65,27 @@ function displayCountries() {
   });
 }
 
+console.log(cities);
+function search() {
+  console.log(cities);
+ 
+};
+
+function findMatches (){
+  const matchArray = search(this.value, cities)
+  console.log(matchArray);
+}
+
 window.addEventListener("load", displayCountries);
+searchBtn.addEventListener("click", search);
 
 
+
+  // cities.filter(() => {
+  //   if (input === "") {
+  //     console.log("yess");
+  //     return data;
+  //   } else if (data.common.toLowerCase().includes(keyWord.toLowerCase())) {
+  //     return data;
+  //   }
+  // });
